@@ -7,8 +7,8 @@ public class Alarm : MonoBehaviour
     [SerializeField] private float _volumeIncreaseSpeed;
     
     private bool _isTurned;
-    private float _minAlarmVolume = 0;
-    private float _maxAlarmVolume = 1;
+    private float _minVolume = 0;
+    private float _maxVolume = 1;
     
     private AudioSource _audioSource;
     private Coroutine _coroutine;
@@ -18,28 +18,28 @@ public class Alarm : MonoBehaviour
         _audioSource = GetComponent<AudioSource>();
     }
 
-    public void TurnOnAlarm()
+    public void TurnOn()
     {
         _isTurned = true;
-        OnAlarmSwitch();
+        OnSwitch();
     }
 
-    public void TurnOffAlarm()
+    public void TurnOff()
     {
         _isTurned = false;
-        OnAlarmSwitch();
+        OnSwitch();
     }
 
-    private void OnAlarmSwitch()
+    private void OnSwitch()
     {
         if (_isTurned)
         {
-            _coroutine = StartCoroutine(ChangeVolume(_maxAlarmVolume));
+            _coroutine = StartCoroutine(ChangeVolume(_maxVolume));
         }
         else
         {
             StopCoroutine(_coroutine);
-            _coroutine = StartCoroutine(ChangeVolume(_minAlarmVolume));
+            _coroutine = StartCoroutine(ChangeVolume(_minVolume));
         }
     }
 
