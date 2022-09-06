@@ -14,10 +14,12 @@ public class EnemySpawner : MonoBehaviour
     
     private IEnumerator Spawn()
     {
+        var waitForSeconds = new WaitForSeconds(_spawnDelay);
+        
         foreach (var spawner in _spawners)
         {
             spawner.Spawn();
-            yield return new WaitForSeconds(_spawnDelay);
+            yield return waitForSeconds;
         }
     }
 }
