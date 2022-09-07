@@ -2477,6 +2477,11 @@ PrefabInstance:
       propertyPath: CoinsText
       value: 
       objectReference: {fileID: 302471400}
+    - target: {fileID: 4438322642135817757, guid: e06837f081e5ad94dab869d4db94380f,
+        type: 3}
+      propertyPath: _coinsText
+      value: 
+      objectReference: {fileID: 302471400}
     - target: {fileID: 8238572012168307330, guid: e06837f081e5ad94dab869d4db94380f,
         type: 3}
       propertyPath: m_RootOrder

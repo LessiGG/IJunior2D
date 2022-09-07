@@ -3,5 +3,7 @@ using UnityEngine.UI;
 
 public class CoinsViewer : MonoBehaviour
 {
-    public Text CoinsText;
+    [SerializeField] private Text _coinsText;
+
+    public Text CoinsText => _coinsText;
 }
