@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    [SerializeField] private Enemy _prefab;
+    [SerializeField] private Coin _prefab;
 
     public void Spawn()
     {

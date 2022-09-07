@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class EnemySpawner : MonoBehaviour
+public class CoinsSpawner : MonoBehaviour
 {
     [SerializeField] private Spawner[] _spawners;
 
