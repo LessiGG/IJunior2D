@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 public class PlayerHealth : MonoBehaviour
 {
-    [SerializeField] private UnityEvent _onHealthChanged;
+    public UnityAction HealthChange;
     
     private int _minHealth = 0;
     private int _maxHealth = 100;
@@ -21,7 +21,7 @@ public class PlayerHealth : MonoBehaviour
         _health += heal;
         _health = Mathf.Clamp(_health, _minHealth, _maxHealth);
         
-        _onHealthChanged?.Invoke();
+        HealthChange?.Invoke();
     }
 
     public void DealDamage(int damage)
@@ -29,6 +29,6 @@ public class PlayerHealth : MonoBehaviour
         _health -= damage;
         _health = Mathf.Clamp(_health, _minHealth, _maxHealth);
         
-        _onHealthChanged?.Invoke();
+        HealthChange?.Invoke();
     }
 }

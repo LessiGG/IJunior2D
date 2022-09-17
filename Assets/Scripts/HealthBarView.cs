@@ -16,7 +16,17 @@ public class HealthBarView : MonoBehaviour
         _slider = GetComponent<Slider>();
     }
 
-    public void ChangeView()
+    private void OnEnable()
+    {
+        _playerHealth.HealthChange += OnHealthChange;
+    }
+
+    private void OnDisable()
+    {
+        _playerHealth.HealthChange -= OnHealthChange;
+    }
+
+    private void OnHealthChange()
     {
         if (_currentCoroutine != null)
         {
