@@ -1,31 +1,34 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerHealth : MonoBehaviour
 {
-    [SerializeField] private int _heal;
-    [SerializeField] private int _damage;
+    [SerializeField] private UnityEvent _onHealthChanged;
     
-    private int _health = 100;
+    private int _minHealth = 0;
     private int _maxHealth = 100;
-
-    public int GetHealth()
+    private int _health;
+    
+    public int Health => _health;
+    
+    private void Start()
     {
-        return _health;
+        _health = _maxHealth;
     }
 
-    public void Heal()
+    public void Heal(int heal)
     {
-        _health += _heal;
+        _health += heal;
+        _health = Mathf.Clamp(_health, _minHealth, _maxHealth);
         
-        if (_health > _maxHealth)
-            _health = _maxHealth;
+        _onHealthChanged?.Invoke();
     }
 
-    public void DealDamage()
+    public void DealDamage(int damage)
     {
-        _health -= _damage;
-
-        if (_health < 0)
-            _health = 0;
+        _health -= damage;
+        _health = Mathf.Clamp(_health, _minHealth, _maxHealth);
+        
+        _onHealthChanged?.Invoke();
     }
 }

@@ -434,11 +434,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 855265519}
         m_MethodName: Heal
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 10
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -509,8 +509,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ebdf0a5e3aa1ac4c81e9d3354cab3d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _heal: 10
-  _damage: 10
+  _onHealthChanged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1653785637}
+        m_MethodName: ChangeView
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &855265520
 Transform:
   m_ObjectHideFlags: 0
@@ -687,11 +699,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 855265519}
         m_MethodName: DealDamage
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 10
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
